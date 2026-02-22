@@ -1,12 +1,12 @@
 # Render Blueprint – backend API only.
 # Deploy frontend separately (e.g. Vercel) and set REACT_APP_API_URL to this service URL + /api.
+# Build/start run from repo root and cd into backend so node_modules is created and used correctly.
 services:
   - type: web
     name: edu-bridge-api
     runtime: node
-    rootDir: backend
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
